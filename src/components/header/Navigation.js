@@ -13,14 +13,14 @@ function Navigation(props){
             underline: 'none',
             display: 'flex',
             alignItems: 'center',
-            height: '100%'
+            fontSize: '1.25rem'
         },
         active: {
-            color: 'red',
+            color: props.theme.accent,
             textDecoration: 'none'
         },
         inactive: {
-            color: 'white',
+            color: props.theme.text,
             textDecoration: 'none'
         },
     }

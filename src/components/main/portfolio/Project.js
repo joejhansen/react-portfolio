@@ -10,8 +10,10 @@ function Project(props) {
         card: {
             // outline: 'dashed red 1px',
             margin: '0 1rem 1rem 1rem',
-            border: 'solid gray 1px',
-            borderRadius: '1rem'
+            border: `solid ${props.theme.tertiary} 1px`,
+            borderRadius: '1rem',
+            backgroundColor: props.theme.secondary,
+            color: props.theme.text
             // position: 'relative',
             // opacity: '99%',
         },
@@ -47,7 +49,7 @@ function Project(props) {
         
     return (
         <section className='col-sm-12 col-md-6 col-lg-4 col-xl-3'>
-            <div className="card bg-dark" style={styles.card}>
+            <div className="card" style={styles.card}>
                 <div style={styles.imgBox}>
                 <img src="https://picsum.photos/200" style={styles.img} alt={props.project.imageAlt}></img>
                 </div>

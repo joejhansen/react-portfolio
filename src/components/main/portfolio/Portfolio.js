@@ -79,7 +79,7 @@ function Portfolio(props) {
     return (
         <div className='row'>
                 {projects.map((project, index) => {
-                    return <Project key={index} project={project} />
+                    return <Project key={index} project={project} theme={props.theme}/>
                 })}
         </div>
     )

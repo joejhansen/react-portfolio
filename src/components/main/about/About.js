@@ -6,11 +6,13 @@ function About(props) {
 
     const styles = {
         aboutBorder: {
-            border: 'solid gray 1px',
+            border: `solid ${props.theme.tertiary} 1px`,
             borderRadius: '1rem',
             margin: '1rem',
             display: 'flex',
-            flexDirection: 'row'
+            flexDirection: 'row',
+            backgroundColor: props.theme.secondary,
+            color: props.theme.color
         },
         contentOptions: {
             listStyleType: 'none',
@@ -18,7 +20,8 @@ function About(props) {
             flexDirection: 'row',
             justifyContent: 'space-around',
             alignItems: 'center',
-            margin: '.5rem'
+            margin: '.5rem',
+            fontSize: '1.25rem'
         },
         imgBox:{
             display: 'flex',
@@ -26,21 +29,15 @@ function About(props) {
             justifyContent: 'center'
         },
         img: {
-            borderRadius: '1rem',
-            margin: '1rem 0',
-            // objectFit: 'cover',
-            width: '100%',
-            // minWidth: '336px',
-            height: 'auto',
             // minHeight: '248px'
         },
         active: {
-            color: 'red',
+            color: props.theme.accent,
             textDecoration: 'none',
             hover: 'grab'
         },
         inactive: {
-            color: 'white',
+            color: props.theme.text,
             textDecoration: 'none'
         }
     }
@@ -80,22 +77,22 @@ function About(props) {
     const renderContent = () => {
         switch (activeContent) {
             case 'Intro':
-                return <InnerContent title={contents[0].title} main={contents[0].main} sub={contents[0].sub} tag={contents[0].tag} />
+                return <InnerContent title={contents[0].title} main={contents[0].main} sub={contents[0].sub} tag={contents[0].tag} theme={props.theme}/>
             case 'Web':
-                return <InnerContent title={contents[1].title} main={contents[1].main} sub={contents[1].sub} tag={contents[1].tag} />
+                return <InnerContent title={contents[1].title} main={contents[1].main} sub={contents[1].sub} tag={contents[1].tag} theme={props.theme}/>
             case 'Film':
-                return <InnerContent title={contents[2].title} main={contents[2].main} sub={contents[2].sub} tag={contents[2].tag} />
+                return <InnerContent title={contents[2].title} main={contents[2].main} sub={contents[2].sub} tag={contents[2].tag} theme={props.theme}/>
             case 'Ad Copy':
-                return <InnerContent title={contents[3].title} main={contents[3].main} sub={contents[3].sub} tag={contents[3].tag} />
+                return <InnerContent title={contents[3].title} main={contents[3].main} sub={contents[3].sub} tag={contents[3].tag} theme={props.theme}/>
             default:
                 break;
         }
     }
 
     return (
-        <div className="row bg-dark" style={styles.aboutBorder}>
+        <div className="row" style={styles.aboutBorder}>
             <div className="col-md-4" style={styles.imgBox}>
-                <img src={Portrait} style={styles.img} alt="Joseph Hansen Portrait"/>
+                <img id='portrait' src={Portrait} style={styles.img} alt="Joseph Hansen Portrait"/>
             </div>
             <div className="col-md-8">
                 <div className="row">

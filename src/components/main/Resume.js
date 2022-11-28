@@ -2,8 +2,10 @@ function Resume(props) {
     const styles = {
         card: {
             margin: '0 1rem 1rem 1rem',
-            border: 'solid gray 1px',
-            borderRadius: '1rem'
+            border: `solid ${props.theme.tertiary} 1px`,
+            borderRadius: '1rem',
+            backgroundColor: props.theme.secondary,
+            color: props.theme.text
             // outline: 'dashed red 1px'
         },
         innerMargin: {
@@ -54,7 +56,7 @@ function Resume(props) {
             {resume.map((entry, index) => {
                 return (
                     <div key={index} className="col-12">
-                        <div className="card bg-dark" style={styles.card}>
+                        <div className="card" style={styles.card}>
                             <div style={styles.innerMargin}>
                                 <p>{entry.role} at {entry.company}</p>
                                 <p>{entry.termStart}{entry.isCurrent ? ' -' : ` - ${entry.termEnd}`}</p>

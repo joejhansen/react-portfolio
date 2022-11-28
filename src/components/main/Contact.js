@@ -4,8 +4,9 @@ function Contact(props) {
 
     const styles = {
         card: {
-            border: 'solid gray 1px',
-            borderRadius: '1rem'
+            border: `solid ${props.theme.tertiary} 1px`,
+            borderRadius: '1rem',
+            backgroundColor: props.theme.secondary
         },
         form: {
             display: 'flex',
@@ -23,6 +24,10 @@ function Contact(props) {
         },
         textCenter: {
             textAlign: 'center'
+        },
+        button: {
+            backgroundColor: props.theme.tertiary,
+            color: props.theme.text
         }
     }
 
@@ -92,7 +97,7 @@ function Contact(props) {
     return (
         <div className="row" style={styles.middleCard}>
             <div className="column">
-                <div className="card bg-dark" style={styles.card}>
+                <div className="card" style={styles.card}>
                     <div className="card-body">
                         <p className="card-title" style={styles.textCenter}>Drop a line</p>
                         <form style={styles.form}>
@@ -120,7 +125,7 @@ function Contact(props) {
                                 onBlur={validate}
                                 style={messageIsValid ? styles.valid : styles.invalid}
                             ></input>
-                            <button className="btn btn-primary" type="submit" onClick={sendMessage}>Contact Me</button>
+                            <button className="btn" type="submit" onClick={sendMessage} style={styles.button}>Contact Me</button>
                         </form>
                     </div>
                 </div>
