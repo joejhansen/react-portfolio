@@ -7,7 +7,7 @@ function Footer(props){
             listStyleType: 'none',
             display: 'flex',
             flexDirection: 'row',
-            justifyContent: 'space-around'
+            justifyContent: 'space-evenly'
         },
         text: {
             textAlign: 'center',
