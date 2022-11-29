@@ -1,6 +1,6 @@
 import { useState } from "react"
 import InnerContent from "./InnerContent"
-import Portrait from "../../../portrait.png"
+import Portrait from "../../../images/portrait.png"
 
 function About(props) {
 
@@ -91,10 +91,10 @@ function About(props) {
 
     return (
         <div className="row" style={styles.aboutBorder}>
-            <div className="col-md-4" style={styles.imgBox}>
+            <div className="col-lg-4" style={styles.imgBox}>
                 <img id='portrait' src={Portrait} style={styles.img} alt="Joseph Hansen Portrait"/>
             </div>
-            <div className="col-md-8">
+            <div className="col-lg-8">
                 <div className="row">
                     <div className="col" style={styles.contentOptions}>
                         {contents.map((content, index) => {

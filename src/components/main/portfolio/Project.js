@@ -13,7 +13,8 @@ function Project(props) {
             border: `solid ${props.theme.tertiary} 1px`,
             borderRadius: '1rem',
             backgroundColor: props.theme.secondary,
-            color: props.theme.text
+            color: props.theme.text,
+            // minHeight: '740px'
             // position: 'relative',
             // opacity: '99%',
         },
@@ -23,7 +24,8 @@ function Project(props) {
         description: {
         },
         title: {
-            textAlign: 'center'
+            textAlign: 'center',
+            fontSize: '1.25rem'
         },
         ul: {
             listStyle: 'none'
@@ -37,21 +39,19 @@ function Project(props) {
         imgBox: {
             display: 'flex',
             flexDirection: 'row',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            margin: '1rem'
         },
-        img: {
-            borderRadius: '1rem',
-            margin: '1rem',
-            height: '200px',
-            width: '200px',
-        },
+        columnPadding: {
+            padding: "0"
+        }
     }
-        
+
     return (
-        <section className='col-sm-12 col-md-6 col-lg-4 col-xl-3'>
+        <section className='col-sm-12 col-md-6 col-lg-4 col-xl-4' style={styles.columnPadding}>
             <div className="card" style={styles.card}>
                 <div style={styles.imgBox}>
-                <img src="https://picsum.photos/200" style={styles.img} alt={props.project.imageAlt}></img>
+                    <img src={props.project.image ? `${props.project.image}` : "https://picsum.photos/200"} style={styles.img} alt={props.project.imageAlt} className="projectImages"></img>
                 </div>
                 <div className="row">
                     <div className="col">
@@ -60,11 +60,8 @@ function Project(props) {
                 </div>
                 <div className="row">
                     <div className="col" style={styles.contentColumn}>
+                        <p>{props.project.description}</p>
                         <p>Created: {props.project.dateCreated}</p>
-                        <p>GitHub URL: <a href={props.project.githubURL}>Here</a></p>
-                        {props.project.deployedURL
-                            ? <p>Deployed URL: <a href={props.project.deployedURL}>Here</a></p>
-                            : <p></p>}
                         <div>
                             {props.project.members.length
                                 ?
@@ -76,7 +73,10 @@ function Project(props) {
                                 </>
                                 : <p>Created by Joseph Hansen</p>}
                         </div>
-                        <p>{props.project.description}</p>
+                        {props.project.deployedURL
+                            ? <p>Deployed URL: <a href={props.project.deployedURL} target='_blank' rel="noreferrer">Here</a></p>
+                            : <p></p>}
+                        <p>GitHub URL: <a href={props.project.githubURL} target='_blank' rel="noreferrer">Here</a></p>
                     </div>
                 </div>
             </div>

@@ -28,10 +28,10 @@ function Navigation(props){
     return(
         <nav className="h-100">
             <ul style={styles.ul}>
-                <li style={styles.li}><a href="#about" onClick={props.handlePageChange} style={ props.activePage === 'About' ? styles.active : styles.inactive }>About</a></li>
-                <li style={styles.li}><a href="#portfolio" onClick={props.handlePageChange} style={ props.activePage === 'Portfolio' ? styles.active : styles.inactive }>Portfolio</a></li>
-                <li style={styles.li}><a href="#contact" onClick={props.handlePageChange} style={ props.activePage === 'Contact' ? styles.active : styles.inactive }>Contact</a></li>
-                <li style={styles.li}><a href="#resume" onClick={props.handlePageChange} style={ props.activePage === 'Resume' ? styles.active : styles.inactive }>Resume</a></li>
+                <li style={styles.li}><a href="#About" onClick={props.handlePageChange} style={ props.activePage === 'About' ? styles.active : styles.inactive }>About</a></li>
+                <li style={styles.li}><a href="#Portfolio" onClick={props.handlePageChange} style={ props.activePage === 'Portfolio' ? styles.active : styles.inactive }>Portfolio</a></li>
+                <li style={styles.li}><a href="#Resume" onClick={props.handlePageChange} style={ props.activePage === 'Resume' ? styles.active : styles.inactive }>Resume</a></li>
+                <li style={styles.li}><a href="#Contact" onClick={props.handlePageChange} style={ props.activePage === 'Contact' ? styles.active : styles.inactive }>Contact</a></li>
             </ul>
         </nav>
     )

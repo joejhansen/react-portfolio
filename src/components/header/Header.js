@@ -9,9 +9,6 @@ function Header(props) {
         name: {
             textAlign: 'center',
             color: props.theme.text,
-            "&:hover": {
-                color: "#efefef"
-            },
         },
         header: {
             borderTop: `solid ${props.theme.secondary} .4rem`,
@@ -27,9 +24,10 @@ function Header(props) {
         <header className="container-fluid" style={styles.header}>
             <div className="row" style={styles.margin}>
                 <div className="col-md-4">
-                    <h1 id='myName' style={styles.name}>Joseph Hansen</h1>
+                    <h1 style={styles.name}>Joseph Hansen</h1>
                 </div>
                 <div className="col-md-8">
+                    {/* drilling the handlepagechange into navigation */}
                     <Navigation handlePageChange={props.handlePageChange} activePage={props.activePage} theme={props.theme} />
                 </div>
             </div>

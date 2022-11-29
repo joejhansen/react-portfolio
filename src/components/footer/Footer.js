@@ -1,4 +1,5 @@
 function Footer(props){
+    // i'll be honest, i probably used display: flex for no reason a couple times but idk which one is the correct one, so
     const styles = {
         ul: {
             marginTop: '.4rem',
@@ -9,8 +10,7 @@ function Footer(props){
             justifyContent: 'space-around'
         },
         text: {
-            display: 'flex',
-            justifyContent: 'center',
+            textAlign: 'center',
             color: props.theme.text
         },
         footer: {
@@ -29,10 +29,14 @@ function Footer(props){
     return(
         <footer style={styles.footer} className="container-fluid">
             <ul style={styles.ul}>
-                <li><a href="#top" style={styles.toTop}>To Top</a></li>
                 <li onClick={props.changeThemeHandler}><a style={styles.toTop} href='#Theme'>Change Theme</a></li>
+                <li><a href="#top" style={styles.toTop}>To Top</a></li>
+                {/* using target="_blank" here to go to a new tab, will see throughout site */}
+                <li><a style={styles.toTop} href='https://github.com/joejhansen/react-portfolio' target="_blank" rel="noreferrer">Page Source</a></li>
             </ul>
-            <p style={styles.text}>Created with React</p>
+            <ul style={styles.ul}>
+                <li><a style={styles.toTop} href="https://github.com/joejhansen" target="_blank" rel="noreferrer">Personal GitHub</a></li>
+            </ul>
         </footer>
     )
 }

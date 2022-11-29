@@ -1,13 +1,30 @@
-*{
+* {
   font-family: 'Alexandria', sans-serif;
 }
 
-#portrait{
+/* styling images in jsx is just impossible */
+#portrait {
   margin: 1rem 0;
   border-radius: 1rem;
   display: flex;
   align-self: flex-start;
   justify-content: center;
-  max-width: 100%;
+  /* IT EITHER LOOKS GOOD ON MY SCREEN OR IT DOESN'T LOOK GOOD AT ALL >:( */
+  max-width: 80%;
+  /* max-width: 200px; */
   max-height: auto;
+}
+
+.projectImages {
+  border-radius: 1rem;
+  height: auto;
+  width: 100%;
+}
+
+#message, #email, #name{
+  min-height: 2rem;
+}
+
+.something{
+  color: #38686a
 }

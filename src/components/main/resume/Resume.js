@@ -23,21 +23,21 @@ function Resume(props) {
             isCurrent: true,
         },
         {
+            company: '',
+            type: 'Freelance',
+            role: 'Freelance Writer and Producer',
+            termStart: '9/20',
+            termEnd: '',
+            description: 'Writing and editing scripts and ad-copy on commission along with raising money to produce independent short films in association with Resin Ape and Parallel Films',
+            isCurrent: true,
+        },
+        {
             company: 'UCLA Coding Bootcamp',
             type: 'Student',
             role: 'Student',
             termStart: '6/22',
             termEnd: '',
             description: 'Studying full-stack development through UCLA extension program with edX',
-            isCurrent: true,
-        },
-        {
-            company: 'Freelance',
-            type: 'Freelance',
-            role: 'Writer and Producer',
-            termStart: '9/20',
-            termEnd: '',
-            description: 'Writing and editing scripts and ad-copy on commission along with raising money to produce independent short films in association with Resin Ape and Parallel Films',
             isCurrent: true,
         },
         {
@@ -53,15 +53,15 @@ function Resume(props) {
 
     return (
         <div className="row">
-            {resume.map((entry, index) => {
+            {resume.map((job, index) => {
                 return (
                     <div key={index} className="col-12">
                         <div className="card" style={styles.card}>
                             <div style={styles.innerMargin}>
-                                <p>{entry.role} at {entry.company}</p>
-                                <p>{entry.termStart}{entry.isCurrent ? ' -' : ` - ${entry.termEnd}`}</p>
-                                <p>{entry.description}</p>
-                                <p>{entry.isCurrent ? "Current" : ""}</p>
+                                <p>{job.role}{job.company ? ` at ${job.company}`: ``}</p>
+                                <p>{job.isCurrent ? "Current" : ""}</p>
+                                <p>{job.termStart}{job.isCurrent ? ' -' : ` - ${job.termEnd}`}</p>
+                                <p>{job.description}</p>
                             </div>
                         </div>
                     </div>

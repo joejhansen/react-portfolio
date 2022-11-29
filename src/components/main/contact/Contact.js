@@ -27,10 +27,12 @@ function Contact(props) {
         },
         button: {
             backgroundColor: props.theme.tertiary,
-            color: props.theme.text
+            color: props.theme.text,
+            marginTop: '1rem'
         }
     }
-
+    
+    // eslint-disable-next-line
     const emailRegex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
 
     const [name, nameChange] = useState('')
@@ -105,7 +107,7 @@ function Contact(props) {
                                 placeholder={nameIsValid ? 'name' : 'please provide a valid name'}
                                 onChange={handleChange}
                                 id='name'
-                                className="m-1"
+                                className="m-2"
                                 onBlur={validate}
                                 style={nameIsValid ? styles.valid : styles.invalid}
                             ></input>
@@ -113,7 +115,7 @@ function Contact(props) {
                                 placeholder={emailIsValid ? 'email' : 'please provide a valid email'}
                                 onChange={handleChange}
                                 id='email'
-                                className="m-1" 
+                                className="m-2" 
                                 onBlur={validate}
                                 style={emailIsValid ? styles.valid : styles.invalid}
                             ></input>
@@ -121,7 +123,7 @@ function Contact(props) {
                                 placeholder='Leave a message'
                                 onChange={handleChange}
                                 id='message'
-                                className="m-1" 
+                                className="m-2" 
                                 onBlur={validate}
                                 style={messageIsValid ? styles.valid : styles.invalid}
                             ></input>
