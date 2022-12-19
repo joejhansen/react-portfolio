@@ -6,6 +6,7 @@ import RegexPrimer from "../../../images/regexprimer.png"
 import RNGWords from "../../../images/rngwords.png"
 import FirstPortfolio from "../../../images/firstportfolio.png"
 import TeamGenerator from "../../../images/teamgenerator.png"
+import OptionSelect from "../../../images/optionSelectImage.png"
 
 
 
@@ -23,6 +24,16 @@ function Portfolio(props) {
     // }
 
     const projects = [
+        {
+            title: 'Option Select Database',
+            image: OptionSelect,
+            imageAlt: 'Option Select React Web App',
+            dateCreated: '11/30/22',
+            githubURL: 'https://github.com/joejhansen/option-select-db',
+            deployedURL: 'https://option-select-db.herokuapp.com/',
+            members: [],
+            description: 'Upload and analyze your fighting game replays with Slippi-JS',
+        },
         {
             title: 'Courier',
             image: Courier,
